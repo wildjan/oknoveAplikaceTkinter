@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2e125446-cc42-472e-86a6-8076a494fe4c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>3-button.py</StartupFile>
+    <StartupFile>2-frame-canvasMy.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,12 +24,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="1-helloHonzo.py" />
     <Compile Include="1-helloWorld.py" />
+    <Compile Include="2-frame-canvasMy.py" />
     <Compile Include="6-keyPress.py" />
     <Compile Include="5-mouse.py" />
     <Compile Include="4-timer.py" />
     <Compile Include="3-button.py" />
-    <Compile Include="2-frameAndCanvas.py">
+    <Compile Include="2-frame-canvas.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="7-entry.py">
