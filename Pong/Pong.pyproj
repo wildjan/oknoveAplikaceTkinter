@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ecfccaae-ee71-42b4-8977-19fb31d1c697</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Pong.py</StartupFile>
+    <StartupFile>Pong_ball.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Pong.py" />
     <Compile Include="Pong_advanced.py" />
     <Compile Include="Pong_ball.py" />
     <Compile Include="Pong_zadani.py" />

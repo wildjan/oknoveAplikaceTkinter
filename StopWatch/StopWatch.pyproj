@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d1c6389f-d9e2-4560-a6d8-384a2c9a4735</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>StopWatchZ.py</StartupFile>
+    <StartupFile>StopWatchMy.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,8 +22,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="StopWatchMy.py" />
     <Compile Include="StopWatchZ.py" />
     <Compile Include="StopWatch.py" />
+    <Compile Include="timeFormat.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
