@@ -1,5 +1,5 @@
 TICKT = 10
-dt = 10. / TICKT
+dt = 5. / TICKT
 # Helper functions
 import math, random
 
@@ -58,12 +58,18 @@ class Ball(object):
 
     def update(self):
         """
-        Obnovuje pozici mice"
+        Obnovuje pozici mice
         """
         # Odrazy
+        self.bounce_vert()
+        self.bounce_horz()
 
         # Nastaveni pozice pos = pos + vel * dt
-
+        posX, posY = self.get_pos()
+        velX, velY = self.get_vel()
+        posX += velX * dt
+        posY += velY * dt
+        self.pos = posX, posY
 
     def draw(self, canvas):
 
