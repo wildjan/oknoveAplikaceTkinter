@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ecfccaae-ee71-42b4-8977-19fb31d1c697</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Pong_ball.py</StartupFile>
+    <StartupFile>Pong_zadani.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

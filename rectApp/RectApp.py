@@ -19,12 +19,19 @@ COLORS = ("Red", "Blue", "Green", "Magenta")
 ctverce = []
 
 # Pomocne funkce
+# Odstrani mrtve ctverce
+def resolve_dead(ctverce):
+    for idx in range(len(ctverce) - 1, -1, -1):
+        if not ctverce[idx].isAlive():
+            ctverce[idx].delete(canvas)
+            del ctverce[idx]
+
 def resolve_colisions(ctverce):
     for idi in range(len(ctverce) - 1):
         for idj in range(idi + 1,len(ctverce)):
             first = ctverce[idi]
             second = ctverce[idj]
-            colided = first.colide(second)
+            first.colide(second)
 
 # Event handlers
 def spawn_ctverec():
@@ -44,6 +51,7 @@ def tick():
     for ctverec in ctverce:
         ctverec.update()
         ctverec.draw(canvas)
+    resolve_dead(ctverce)
     resolve_colisions(ctverce)
     root.after(TICKT, tick)
 

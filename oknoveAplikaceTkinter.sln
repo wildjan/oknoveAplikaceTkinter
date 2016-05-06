@@ -15,6 +15,10 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "BallApp", "BallApp\BallApp.
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "RectApp", "rectApp\RectApp.pyproj", "{2348DDB3-E5D5-492D-94E3-CB82576A892A}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "BearApp", "BearApp\BearApp.pyproj", "{178DBCF2-C348-4171-B943-14166E69FDEB}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "screenSaver", "screenSaver\screenSaver.pyproj", "{BF2D643B-2D7D-4150-AA75-36E85BFC2FDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{E5628277-5BD9-4F7E-9679-C83F1CB5E4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2348DDB3-E5D5-492D-94E3-CB82576A892A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2348DDB3-E5D5-492D-94E3-CB82576A892A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178DBCF2-C348-4171-B943-14166E69FDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{178DBCF2-C348-4171-B943-14166E69FDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2D643B-2D7D-4150-AA75-36E85BFC2FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2D643B-2D7D-4150-AA75-36E85BFC2FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

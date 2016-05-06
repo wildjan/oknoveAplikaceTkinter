@@ -3,17 +3,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>2e125446-cc42-472e-86a6-8076a494fe4c</ProjectGuid>
+    <ProjectGuid>{178dbcf2-c348-4171-b943-14166e69fdeb}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>5-mouse.py</StartupFile>
+    <StartupFile>BearApp.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>projZaklady</Name>
-    <RootNamespace>projZaklady</RootNamespace>
-    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
-    <InterpreterVersion>2.7</InterpreterVersion>
+    <Name>BallApp</Name>
+    <RootNamespace>BallApp</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,31 +21,23 @@
     <DebugSymbols>true</DebugSymbols>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="1-helloHonzo.py" />
-    <Compile Include="1-helloWorld.py" />
-    <Compile Include="2-frame-canvasMy.py" />
-    <Compile Include="3-buttonMy.py" />
-    <Compile Include="4-timer My.py" />
-    <Compile Include="6-keyPress.py" />
-    <Compile Include="5-mouse.py" />
-    <Compile Include="4-timer.py" />
-    <Compile Include="3-button.py" />
-    <Compile Include="2-frame-canvas.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="7-entry.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="X-other_mouse.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BearApp.py" />
+    <Compile Include="classBear.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\teddybear0.png" />
+    <Content Include="img\teddybear1.png" />
+    <Content Include="img\teddybear2.png" />
+    <Content Include="img\teddybeer.png" />
+  </ItemGroup>
   <Import Condition="Exists($(PtvsTargetsFile))" Project="$(PtvsTargetsFile)" />
   <Import Condition="!Exists($(PtvsTargetsFile))" Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

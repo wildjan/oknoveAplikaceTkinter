@@ -1,8 +1,13 @@
+# Imports
+import math, random
+from Tkinter import *
+from PIL import Image, ImageTk
+
+# CONSTANTS and variables
 TICKT = 10
 dt = 10. / TICKT
-# Helper functions
-import math, random
 
+# Helper functions
 # Resi fyzikalni ulohu pruzny raz ctvercu k je koeficient pruznosti 0/1-nepruzne/pruzne
 def rect_rect_collide(v1, v2):
     """
@@ -17,22 +22,21 @@ def rect_rect_collide(v1, v2):
     return u1, u2
 
 class Ctverec(object):
-    """Implementace tridy Ctverec pro animaci cverce v prostredi Tkinter"""
-    def __init__(self, canvas, position, velocity, side, width, height, color="White"):
+    """Implementace tridy Ctverec pro animaci screensaveru v prostredi Tkinter"""
+    def __init__(self, canvas, screen, position, velocity, side, width, height):
+        self.screen = screen
         self.pos = position
         self.vel = velocity
         self.side = side
-        self.col = color
         self.width = width
         self.height = height
-        self.life = 10
-        self.alive = True
-        box = self.get_box()
-        self.sprite = canvas.create_rectangle(box, fill = self.col)
-        self.txt_sprite = canvas.create_text(self.pos, text = str(self.life), font = "Verdana 10")
+        bbox = self.get_box()
+        ctverecImage = self.screen.crop(bbox)
+        self.ctverecSprite = ImageTk.PhotoImage(ctverecImage)
+        self.ctverec = canvas.create_image(self.pos, image=self.ctverecSprite)
 
     def get_box(self):
-        """Vraci ctverec pro zobrazeni mice-kruhu""" 
+        """Vraci bbox pro zobrazeni ctverce""" 
         box = (self.pos[0] - self.side/2,\
                self.pos[1] - self.side/2,\
                self.pos[0] + self.side/2,\
@@ -55,13 +59,6 @@ class Ctverec(object):
         """Vraci polomer ctverce"""
         return self.side
 
-    def isAlive(self):
-        return self.alive
-
-    def delete(self, canvas):
-        canvas.delete(self.sprite)
-        canvas.delete(self.txt_sprite)
-
     def update(self):
         """
         Obnovuje pozici ctverce"
@@ -77,14 +74,12 @@ class Ctverec(object):
         self.pos = (pos_x, pos_y)
 
     def draw(self, canvas):
-        if self.life <= 0:
-            self.alive = False
-            canvas.delete(self.sprite)
-            canvas.delete(self.txt_sprite)
-        box = self.get_box()
-        canvas.coords(self.sprite, box)
-        canvas.coords(self.txt_sprite, self.pos)
-        canvas.itemconfig(self.txt_sprite, text = str(self.life))
+        canvas.delete(self.ctverec)
+        bbox = self.get_box()
+        ctverecImage = self.screen.crop(bbox)
+        self.ctverecSprite = ImageTk.PhotoImage(ctverecImage)
+        self.ctverec = canvas.create_image(self.pos, image=self.ctverecSprite)
+        #canvas.image = ctverecSprite
 
     def bounce_vert(self):
         if self.pos[0] <= self.side/2 or self.pos[0] >= self.width - self.side/2:
@@ -99,10 +94,8 @@ class Ctverec(object):
         pos2 = other.get_pos()
         vel1 = self.vel
         vel2 = other.vel
-        if abs(pos1[0]-pos2[0]) <= self.get_side()/2 + other.get_side()/2 and\
-           abs(pos1[1]-pos2[1]) <= self.get_side()/2 + other.get_side()/2:
+        if abs(pos1[0] - pos2[0]) < (self.side/2 + other.side/2) and\
+           abs(pos1[1] - pos2[1]) < (self.side/2 + other.side/2):
             vel1, vel2 = rect_rect_collide(vel1, vel2)
             self.set_vel(vel1)
-            self.life -= 1
             other.set_vel(vel2)
-            other.life -= 1
